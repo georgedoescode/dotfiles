@@ -1,12 +1,16 @@
+  GNU nano 2.0.6                                                   File: /Users/georgedev/.vimrc
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'sheerun/vim-polyglot'
+Plug 'mxw/vim-jsx'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 call plug#end()
 
 " Theme
