@@ -1,5 +1,3 @@
-  GNU nano 2.0.6                                                   File: /Users/georgedev/.vimrc
-
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
