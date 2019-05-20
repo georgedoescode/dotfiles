@@ -14,6 +14,7 @@ Plug 'https://github.com/hail2u/vim-css3-syntax.git'
 Plug 'https://github.com/Valloric/YouCompleteMe.git'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'maximbaz/lightline-ale'
 call plug#end()
 
 " Theme
@@ -43,13 +44,32 @@ set number
 " Show lightline
 set laststatus=2
 
+" Configure lightline
 let g:lightline = {
   \'colorscheme': 'dracula'
 \}
 
+let g:lightline.component_expand = {
+  \'linter_checking': 'lightline#ale#checking',
+  \'linter_warnings': 'lightline#ale#warnings',
+  \'linter_errors': 'lightline#ale#errors',
+  \'linter_ok': 'lightline#ale#ok',
+\}
+
+let g:lightline.component_type = {
+  \'linter_checking': 'left',
+  \'linter_warnings': 'warning',
+  \'linter_errors': 'error',
+  \'linter_ok': 'left',
+\}
+
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+
+
 " Italic comments 
 highlight Comment cterm=italic gui=italic
 
+" Configure ale
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier'],
@@ -57,6 +77,7 @@ let g:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 
